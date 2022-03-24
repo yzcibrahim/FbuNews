@@ -15,7 +15,6 @@ namespace UserService.Controllers
     public class UserAccountController : ControllerBase
     {
 
-
         NewsDbContext _ctx;
         IJwtAuth _jwtAuth;
         public UserAccountController(NewsDbContext ctx, IJwtAuth jwtAuth)
