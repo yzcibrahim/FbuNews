@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -21,12 +22,14 @@ namespace UserService
         }
         public string Authentication(string username, string password)
         {
-            var usr = _ctx.UserAccounts.FirstOrDefault(c => c.UserName == username && c.Password == password);
+            var usr = _ctx.UserAccounts.Include(c=>c.UserRoles).ThenInclude(c=>c.UserRole).FirstOrDefault(c => c.UserName == username && c.Password == password);
             if (usr == null)
                 return null;
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var tokenKey = Encoding.ASCII.GetBytes(key);
+
+            
 
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
@@ -35,11 +38,20 @@ namespace UserService
                     {
                         new Claim(ClaimTypes.Name, username),
                         new Claim("userId",usr.Id.ToString())
+                       // new Claim(ClaimTypes.Role,usr.UserRoles.FirstOrDefault().UserRole.RollName)
                     }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
+
+            foreach (var role in usr.UserRoles)
+            {
+                // tokenDescriptor.Subject.AddClaim(ClaimTypes.Role, role.UserRole.RollName);
+                tokenDescriptor.Subject.AddClaim(new Claim(ClaimTypes.Role, role.UserRole.RollName));
+            }
+
+            
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 

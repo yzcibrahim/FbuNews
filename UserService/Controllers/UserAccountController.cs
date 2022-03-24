@@ -25,16 +25,33 @@ namespace UserService.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles ="Admin")]
         public IActionResult Get(int id)
         {
-            var usr= _ctx.UserAccounts.FirstOrDefault(c=>c.Id==id);
+            var usr = _ctx.UserAccounts.Include(c=>c.UserRoles).ThenInclude(c=>c.UserRole).FirstOrDefault(c => c.Id == id);
+
+            UserAccountDto userAccountDto = new UserAccountDto();
+            userAccountDto.Id = usr.Id;
+            userAccountDto.Email = usr.Email;
+            userAccountDto.UserName = usr.UserName;
+            userAccountDto.Rolles = new List<UserRoleDto>();
+
+            foreach(var role in usr.UserRoles)
+            {
+                userAccountDto.Rolles.Add(new UserRoleDto()
+                {
+                    Id = role.Id,
+                    RollName = role.UserRole.RollName
+                });
+            }
+
             if (usr != null)
-                return Ok(usr);
+                return Ok(userAccountDto);
             return NoContent();
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles ="User")]
         public IEnumerable<UserAccount> Get()
         {
             var claims = Request.HttpContext.User.Claims;
@@ -80,6 +97,7 @@ namespace UserService.Controllers
             return Ok(token);
         }
 
+       
         private UserAccount DtoToEntity(UserAccountDto usrDto)
         {
             UserAccount entity = new UserAccount()
