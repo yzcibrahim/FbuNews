@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{135C3358-D52C-4697-9C72-A5E0B77745F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsService", "NewsService\NewsService.csproj", "{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsService", "NewsService\NewsService.csproj", "{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4DC189EF-B42A-470C-880B-16E8DE5C0D73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4DC189EF-B42A-470C-880B-16E8DE5C0D73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{1F7661B9-BF5B-45B2-A33E-6594BD0CFE0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{1F7661B9-BF5B-45B2-A33E-6594BD0CFE0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,10 @@ Global
 		{135C3358-D52C-4697-9C72-A5E0B77745F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135C3358-D52C-4697-9C72-A5E0B77745F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135C3358-D52C-4697-9C72-A5E0B77745F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04C42CC-7CD3-49D6-A1C6-C823CE9E2577}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DC189EF-B42A-470C-880B-16E8DE5C0D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DC189EF-B42A-470C-880B-16E8DE5C0D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC189EF-B42A-470C-880B-16E8DE5C0D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
