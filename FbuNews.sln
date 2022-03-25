@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication2", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommentsService", "CommentsService\CommentsService.csproj", "{355D1E65-75B0-4325-8937-FA1DCE7FA032}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CategoryService", "CategoryService\CategoryService.csproj", "{11DB4BA1-788C-42D4-A5B1-2F79CFEEE9B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{355D1E65-75B0-4325-8937-FA1DCE7FA032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{355D1E65-75B0-4325-8937-FA1DCE7FA032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{355D1E65-75B0-4325-8937-FA1DCE7FA032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11DB4BA1-788C-42D4-A5B1-2F79CFEEE9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DB4BA1-788C-42D4-A5B1-2F79CFEEE9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DB4BA1-788C-42D4-A5B1-2F79CFEEE9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DB4BA1-788C-42D4-A5B1-2F79CFEEE9B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
